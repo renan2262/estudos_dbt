@@ -1,0 +1,32 @@
+
+version: 2
+
+models:
+    - name: inscritos
+      description: "crimes eua"
+      columns:
+          - name: unique_key
+            description: "tabela completa"
+            tests:
+                - unique
+
+    - name: stage_analise_crimes
+      description: "descrições DWI"
+      columns:
+          - name: boleano
+            description: "true apenas descrições DWI"
+            tests:
+                - not_null
+
+    - name: analise_crimes
+      description: "contagem de descrições"
+      columns:
+      - name: qtd_descripts
+        description: "quantidade por descrição"
+        tests:
+          - accepted_values:
+              values: [1, 2]
+              quote: false
+
+
+
